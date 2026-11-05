@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nhanes-helpy"
+version = "1.0.0"
+description = "Load, decode, describe, and aggregate any/all NHANES data"
+requires-python = ">=3.10"
+dependencies = ["pandas"]
+readme = "README.md"
+
+license =  "CC-BY-4.0"         # or whatever license you use
+authors = [{name = "Christopher Hereau", email = "Chris@perpetualmotion.work"}]
+keywords = ["nhanes", "health", "survey", "pandas", "nhanes python", "pynhanes", "public health", "public data"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+]
+
+[project.optional-dependencies]
+xpt = ["pyreadstat"]
+dev = ["pytest"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nhanes_helpy = ["sample_data/**/*"]
